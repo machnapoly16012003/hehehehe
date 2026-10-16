@@ -1,0 +1,156 @@
+/* ==========================================================================
+   CONFESSION SECTION — CINEMATIC CLIMAX
+   ========================================================================== */
+
+.confession-section {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 8rem 1.5rem 6rem;
+  text-align: center;
+  position: relative;
+}
+
+.confession-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.confession-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 4.5rem;
+}
+
+.confession-line {
+  font-family: var(--font-serif);
+  color: var(--color-text-pure);
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.confession-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.confession-line.lead {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+.confession-line.core {
+  font-size: clamp(1.8rem, 4.2vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.confession-line.affirmation {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  color: var(--color-text-secondary);
+}
+
+.confession-line.question {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--color-text-pure);
+  margin-top: 1.5rem;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Interactive Responses */
+.confession-responses-container {
+  margin-top: 3rem;
+  opacity: 0;
+  transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+}
+
+.confession-responses-container.visible {
+  opacity: 1;
+}
+
+.confession-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.confession-btn {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-hover);
+  padding: 0.95rem 2rem;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all var(--transition-normal);
+}
+
+.confession-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-pure);
+  border-color: var(--color-text-pure);
+  transform: translateY(-2px);
+}
+
+.confession-btn.selected {
+  background: var(--color-text-pure);
+  color: var(--color-black);
+  border-color: var(--color-text-pure);
+}
+
+/* Response Message Card */
+.confession-reply-card {
+  margin-top: 2rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 2.2rem;
+  border-radius: 4px;
+  animation: fadeInLetters 1s ease forwards;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.reply-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.reply-title {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+.reply-body {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--color-text-pure);
+  line-height: 1.6;
+}

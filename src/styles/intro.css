@@ -1,0 +1,126 @@
+/* ==========================================================================
+   INTRO SCREEN — CINEMATIC OVERTURE
+   ========================================================================== */
+
+.intro-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+  text-align: center;
+  transition: opacity 1.2s cubic-bezier(0.77, 0, 0.175, 1),
+              visibility 1.2s cubic-bezier(0.77, 0, 0.175, 1),
+              transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.intro-wrapper.fading-out {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.03);
+  pointer-events: none;
+}
+
+.intro-content {
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.intro-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  opacity: 0;
+  animation: fadeInLetters 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+.intro-main-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  color: var(--color-text-pure);
+  opacity: 0;
+  animation: fadeInLetters 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+}
+
+.intro-subheading {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  opacity: 0;
+  animation: fadeInLetters 2s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
+}
+
+.intro-divider {
+  width: 36px;
+  height: 1px;
+  background: var(--color-border);
+  opacity: 0;
+  animation: expandLine 1.5s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
+}
+
+.intro-action-container {
+  margin-top: 1.5rem;
+  opacity: 0;
+  animation: fadeInLetters 1.6s cubic-bezier(0.16, 1, 0.3, 1) 2.4s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.intro-skip-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  transition: color var(--transition-fast);
+}
+
+.intro-skip-btn:hover {
+  color: var(--color-text-pure);
+}
+
+@keyframes fadeInLetters {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes expandLine {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 48px;
+    opacity: 1;
+  }
+}

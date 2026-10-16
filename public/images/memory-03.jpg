@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#181818" />
+      <stop offset="60%" stop-color="#0c0c0c" />
+      <stop offset="100%" stop-color="#020202" />
+    </radialGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.05  0 0 0 0 0.05  0 0 0 0 0.05  0 0 0 0.15 0" />
+      <feComposite in2="SourceGraphic" in="gl" operator="over" />
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#vignette)"/>
+  
+  <!-- Subtle border / film frame -->
+  <rect x="30" y="30" width="740" height="540" fill="none" stroke="#222" stroke-width="1" opacity="0.6"/>
+  <rect x="40" y="40" width="720" height="520" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+  
+  <!-- Film Roll Markers -->
+  <text x="50" y="55" fill="#444" font-family="monospace" font-size="11" letter-spacing="2">KODAK TRI-X 400</text>
+  <text x="750" y="55" fill="#444" font-family="monospace" font-size="11" letter-spacing="2" text-anchor="end">FRAME #03</text>
+  
+  
+      <!-- Moon crescent and stars -->
+      <path d="M420 180 A70 70 0 1 0 490 250 A85 85 0 1 1 420 180 Z" fill="#eaeaea" opacity="0.85"/>
+      <!-- Soft stars -->
+      <circle cx="250" cy="140" r="1.5" fill="#fff" opacity="0.8"/>
+      <circle cx="310" cy="220" r="1.2" fill="#fff" opacity="0.6"/>
+      <circle cx="560" cy="160" r="2.0" fill="#fff" opacity="0.9"/>
+      <circle cx="620" cy="240" r="1.5" fill="#fff" opacity="0.7"/>
+      <circle cx="200" cy="280" r="1.0" fill="#fff" opacity="0.5"/>
+      <circle cx="490" cy="110" r="1.8" fill="#fff" opacity="0.75"/>
+      <!-- Distant horizon hills -->
+      <path d="M100 480 Q250 420 450 450 T800 440 L800 600 L100 600 Z" fill="#141414"/>
+      <text x="400" y="540" fill="#666" font-family="'Cormorant Garamond', serif" font-size="20" letter-spacing="4" text-anchor="middle">MIDNIGHT TALKS</text>
+    
+</svg>
